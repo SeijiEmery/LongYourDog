@@ -26,7 +26,7 @@ Note: we're using different scenes b/c git is terrible at handling merges / coll
 
 ### Pull requests
 
-When you're done go to this git repo (on the web) and click 'Open new pull request'. See [https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github) for details.
+When you're done go to this git repo (on the web) and click 'Open new pull request'. See [https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github](for details)
 
 You should ONLY ever work in / commit changes to your branch. Changes made to any other branch, including master (the default) will be nuked / reverted. I'm putting in this policy so our dev process will be less painful.
 
