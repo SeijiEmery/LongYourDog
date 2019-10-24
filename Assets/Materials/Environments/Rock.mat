@@ -81,6 +81,6 @@ Material:
     - _Ambient: {r: 0.4509804, g: 0.37254903, b: 0.21176471, a: 1}
     - _Color: {r: 0.2558706, g: 0.10034712, b: 0.38679248, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 0.19169046, g: 0.13333334, b: 0.21960784, a: 1}
     - _RimLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecularColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
