@@ -5020,6 +5020,31 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2961612546066195781, guid: 336439d45eaa74384b90d659ee0798f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 579bd3382f3a1564599f6398fc582628, type: 2}
+    - target: {fileID: 6916861272633157656, guid: 336439d45eaa74384b90d659ee0798f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 579bd3382f3a1564599f6398fc582628, type: 2}
+    - target: {fileID: 8660957607441638410, guid: 336439d45eaa74384b90d659ee0798f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 579bd3382f3a1564599f6398fc582628, type: 2}
+    - target: {fileID: 8660957607482228916, guid: 336439d45eaa74384b90d659ee0798f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 579bd3382f3a1564599f6398fc582628, type: 2}
+    - target: {fileID: 8660957607567753210, guid: 336439d45eaa74384b90d659ee0798f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 579bd3382f3a1564599f6398fc582628, type: 2}
     - target: {fileID: 691146243732970322, guid: 336439d45eaa74384b90d659ee0798f1,
         type: 3}
       propertyPath: camera
