@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour, IPlayerController {
     private Rigidbody rb;
-    
+
     // Start is called before the first frame update
     void Start() {
         rb = GetComponent<Rigidbody>();
@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerController {
 
     public FollowCamera camera;
 
-    public float jumpSpeed = 10f;// m/s
+    public float jumpSpeed = 10f; // m/s
     public float moveSpeed = 3.5f; // m/s
     public float turnSpeed = 180.0f; // degrees / sec
 
@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerController {
                 maxZoomDist
             );
         }
+
         if (camera) {
             var pitchAngle = zoomAngleCurve.Evaluate((zoomDist - minZoomDist) / (maxZoomDist - minZoomDist));
             var offset = Vector3.up * zoomDist * Mathf.Sin(pitchAngle)
@@ -64,14 +65,15 @@ public class PlayerMovement : MonoBehaviour, IPlayerController {
     public void Jump() {
         if (!enableMovement) return;
 //        if (!jumped) {
-            jumped = true;
-            rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
+        jumped = true;
+        rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
 //        }
     }
-    
+
     public void UpdatePlayerMovement(Vector2 dir) {
         moveDir = dir;
     }
+
     public void UpdateCameraMovement(Vector2 dir) {
         turnDir = dir;
     }
@@ -94,33 +96,36 @@ public class PlayerMovement : MonoBehaviour, IPlayerController {
         grabButtonPressed = true;
         enableMovement = false;
     }
+
     public void OnGrabButtonReleased() {
         grabButtonPressed = false;
         enableMovement = true;
-        if (GetComponent<HingeJoint>()!= null){
-        	HingeJoint hjOut = GetComponent<HingeJoint>();
-           	Destroy(hjOut);
+        if (GetComponent<HingeJoint>() != null) {
+            HingeJoint hjOut = GetComponent<HingeJoint>();
+            Destroy(hjOut);
 /////////////////////////////////////           	/*Restore Normal Movement*/
         }
     }
 
-    public void OnMenuButtonPressed() {
-    }
+    public void OnMenuButtonPressed() { }
 
     //Swinging trigger
-    void OnTriggerStay(Collider other) 
-    {
-        if (other.gameObject.CompareTag ("Hook"))
-        {
-        	if (GetComponent<HingeJoint>()== null){
-        		if(grabButtonPressed){
+    void OnTriggerStay(Collider other) {
+        if (other.gameObject.CompareTag("Hook")) {
+            if (GetComponent<HingeJoint>() == null) {
+                if (grabButtonPressed) {
 /////////////////////////////////////        		 /*Disable Normal Movement*/
-	            	HingeJoint hj = gameObject.AddComponent<HingeJoint>() as HingeJoint;
-	            	hj.anchor = transform.InverseTransformPoint(other.gameObject.transform.position);
-	            	hj.axis = (other.gameObject.GetComponent<HookData>().hookAxis);
-	            	Debug.Log(other.gameObject.GetComponent<HookData>().hookAxis);
-            	}
+                    HingeJoint hj = gameObject.AddComponent<HingeJoint>() as HingeJoint;
+                    hj.anchor = transform.InverseTransformPoint(other.gameObject.transform.position);
+                    hj.axis = (other.gameObject.GetComponent<HookData>().hookAxis);
+                    Debug.Log(other.gameObject.GetComponent<HookData>().hookAxis);
+                }
             }
         }
+    }
+
+    // reset player rotation when it hits the ground
+    void OnCollisionEnter(Collision collision) {
+        transform.rotation = Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up);
     }
 }
