@@ -10,7 +10,7 @@ public class HookData : MonoBehaviour
 	public Vector3 hookAxis;
     void Start()
     {
-    	GetComponent<Transform>().localScale = new Vector3(radius,radius,radius);
+//    	GetComponent<Transform>().localScale = new Vector3(radius,radius,radius);
 
         var capsule = GetComponent<CapsuleCollider>();
         if (capsule != null) {
