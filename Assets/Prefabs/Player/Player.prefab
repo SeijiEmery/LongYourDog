@@ -185,7 +185,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   minZoomDist: 2
   maxZoomDist: 20
-  zoomSpeed: 10
+  zoomSpeed: 1.58
   zoomDist: 1
 --- !u!54 &691146243732970323
 Rigidbody:
